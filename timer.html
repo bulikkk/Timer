@@ -15,15 +15,42 @@
     var now = new Date();
     var timer = document.getElementById("demo");
     var hour = now.getHours();
+    var day = now.getDay();
 
   //poniżej pole określające godzinę wysyłki! W celu zmiany na inną trzeba zmienić poniższe trzy 16 na odpowiednią godzinę
-
-    if (hour < 16) {
-      var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate()), 16, 0, 0);
+    if (day == 5) {
+      if (hour < 16) {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate()), 16, 0, 0);
+      }
+      else {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 3), 16, 0, 0);
+      }
+    }
+    else if (day == 6) {
+      if (hour < 16) {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 2), 16, 0, 0);
+      }
+      else {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 2), 16, 0, 0);
+      }
+    }
+    else if (day == 0) {
+      if (hour < 16) {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 1), 16, 0, 0);
+      }
+      else {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 1), 16, 0, 0);
+      }
     }
     else {
-      var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 1), 16, 0, 0);
+      if (hour < 16) {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate()), 16, 0, 0);
+      }
+      else {
+        var deadline = new Date(parseInt(now.getFullYear()), parseInt(now.getMonth()), parseInt(now.getDate() + 1), 16, 0, 0);
+      }
     }
+    
     var from = now.getTime();
     var to = deadline.getTime();
     var counter = (to-from)/1000;
