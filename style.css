@@ -13,3 +13,12 @@
    font-family: 'Montserrat', sans-serif;
    color:white;
 }
+
+.frame>p {
+  margin-top:10px;
+  text-align:center;
+  font-weight:900;
+  font-size:60px;
+  font-family: 'Montserrat', sans-serif;
+  color:#FFCA0D;
+}
